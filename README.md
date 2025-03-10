@@ -5,6 +5,7 @@
 * https://chat.deepseek.com/
 * https://www.perplexity.ai/
 * https://x.com/i/grok
+* https://claude.ai/
 
 ## 対策検討中
 * https://notebooklm.google.com/
