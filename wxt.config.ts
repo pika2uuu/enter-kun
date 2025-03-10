@@ -5,7 +5,7 @@ export default defineConfig({
     extensionApi: 'chrome',
     modules: ['@wxt-dev/module-react'],
     runner: {
-        startUrls: ["https://chatgpt.com/", "https://chat.deepseek.com/https://chat.deepseek.com/", "https://www.perplexity.ai/", "https://x.com/i/grok", "https://notebooklm.google.com/"],
+        startUrls: ["https://chatgpt.com/", "https://chat.deepseek.com/https://chat.deepseek.com/", "https://www.perplexity.ai/", "https://x.com/i/grok", "https://notebooklm.google.com/", "https://claude.ai/"],
         chromiumArgs: ['--user-data-dir=./.wxt/chrome-data'],
     },
     manifest: {
