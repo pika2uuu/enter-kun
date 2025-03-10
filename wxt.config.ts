@@ -12,11 +12,6 @@ export default defineConfig({
         name: "Enter Kun",
         version: "1.0.0",
         description: "Enter is a New Line, not a Sender.  ChatGPT, Grok, DeepSeek, NotebookLM",
-        permissions: [
-            'storage',
-            'declarativeNetRequest',
-            'declarativeNetRequestWithHostAccess',
-        ],
         declarative_net_request: {
             rule_resources: [
                 {
