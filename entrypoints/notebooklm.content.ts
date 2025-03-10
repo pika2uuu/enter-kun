@@ -10,7 +10,7 @@ export default defineContentScript({
             position: 'modal',
             anchor: 'textarea.query-box-input',
             onMount: () => {
-                document.addEventListener("keydown",  handleEnterKeyPress, { capture: true });
+                window.addEventListener("keydown",  handleEnterKeyPress, { capture: true });
             }
         });
         ui.autoMount();

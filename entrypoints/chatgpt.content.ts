@@ -1,8 +1,8 @@
 export default defineContentScript({
     "matches": ["https://chatgpt.com/*"],
     async main() {
-        // document全体に対してイベントリスナーを登録することでロード時にテキストエリアが存在しない問題に対応している
-        document.addEventListener("keydown", handleEnterKeyPress, { capture: true });
+        // window全体に対してイベントリスナーを登録することでロード時にテキストエリアが存在しない問題に対応している
+        window.addEventListener("keydown", handleEnterKeyPress, { capture: true });
   },
 });
 
@@ -19,7 +19,7 @@ function handleEnterKeyPress(event: KeyboardEvent) {
         event.preventDefault();
 
         // contenteditableでは sectionStart、sectionEndが使えないため長い実装になるのでShift+Enterのまま実装
-        let shiftEnter = new KeyboardEvent('keydown', {
+        const shiftEnter = new KeyboardEvent('keydown', {
             key: "Enter",
             code: "Enter",
             shiftKey: true,

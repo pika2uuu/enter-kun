@@ -22,7 +22,7 @@ export default defineContentScript({
 function handleEnterKeyPress(event: KeyboardEvent) {
     // 変換確定前なら無視(preventDefaultで変換確定が勝手に行われるが変な挙動を起こさせないためにも明示的にアーリーリターンしている)
     if (event.isComposing) return;
-    // テキストエリアにフォーカスしてないなら無視
+    // DIVにフォーカスしてないなら無視
     const target = event.target as HTMLDivElement | null;
     if (!target) return;
 
@@ -32,7 +32,7 @@ function handleEnterKeyPress(event: KeyboardEvent) {
         event.preventDefault();
         event.stopPropagation();
 
-        // contenteditableでは sectionStart、sectionEndが使えないため長い実装になるのでShift+Enterのまま実装
+        // contenteditableでは sectionStart、sectionEndが使えないため長い実装になるのでShift+Enterイベントを発火して改行する
         const shiftEnter = new KeyboardEvent('keydown', {
             key: "Enter",
             code: "Enter",
@@ -41,7 +41,5 @@ function handleEnterKeyPress(event: KeyboardEvent) {
             cancelable: true,
         });
         target.dispatchEvent(shiftEnter);
-
-        alert("enter only")
     }
 }
