@@ -2,7 +2,6 @@ export default defineContentScript({
     "matches": [
         "https://www.perplexity.ai/*",
         "https://x.com/i/grok*",
-        "https://chat.deepseek.com/*",
     ],
     async main() {
         window.addEventListener("keydown",  handleEnterKeyPress, { capture: true });
